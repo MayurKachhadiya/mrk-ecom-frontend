@@ -32,7 +32,7 @@ const CartDetails = () => {
       resUserData = jwtDecode(UserDataToken);
     }
     axios
-      .get(`http://localhost:5000/cart/details/${resUserData.id}`, {
+      .get(`https://mrk-com-backend.onrender.com/cart/details/${resUserData.id}`, {
         headers: {
           Authorization: `Bearer ${UserDataToken}`,
         },
@@ -64,7 +64,7 @@ const CartDetails = () => {
     }
     axios
       .post(
-        "http://localhost:5000/cart/add",
+        "https://mrk-com-backend.onrender.com/cart/add",
         {
           UserId: resUserData.id,
           ProductId: pid,
@@ -110,7 +110,7 @@ const CartDetails = () => {
     }
     axios
       .post(
-        "http://localhost:5000/cart/delete",
+        "https://mrk-com-backend.onrender.com/cart/delete",
         {
           UserId: resUserData.id,
           ProductId: pid,

@@ -58,7 +58,7 @@ const Profile = () => {
     formData.append("profileImages", userImage[0]);
     formData.append("userPassword", userPassword);
     axios
-      .post(`http://localhost:5000/user/update/${id}`, formData, {
+      .post(`https://mrk-com-backend.onrender.com/user/update/${id}`, formData, {
         headers: {
           Authorization: `Bearer ${BEARER_TOKEN}`,
           "Content-Type": "multipart/form-data",

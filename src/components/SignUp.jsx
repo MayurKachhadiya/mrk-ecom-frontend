@@ -30,7 +30,7 @@ const SignUp = () => {
 
     formData.append('profileImages',data.profileImages[0])
     axios
-      .post("http://localhost:5000/user/signup", formData)
+      .post("https://mrk-com-backend.onrender.com/user/signup", formData)
       .then((res) => {
         localStorage.setItem("user-token", res.data.token);
         const resUserData = jwtDecode(res.data.token);

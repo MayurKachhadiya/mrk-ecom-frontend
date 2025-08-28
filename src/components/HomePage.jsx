@@ -52,7 +52,7 @@ const HomePage = () => {
     const BEARER_TOKEN = localStorage.getItem("user-token");
     axios
       .post(
-        `http://localhost:5000/product/search?pname=${searchValue}`,
+        `https://mrk-com-backend.onrender.com/product/search?pname=${searchValue}`,
         {
           currentPage: page,
           rowPerPage: rowsPerPage,
@@ -96,7 +96,7 @@ const HomePage = () => {
   const handleDeleteConfirm = () => {
     const BEARER_TOKEN = localStorage.getItem("user-token");
     axios
-      .delete(`http://localhost:5000/product/delete/${selectedProductId}`, {
+      .delete(`https://mrk-com-backend.onrender.com/product/delete/${selectedProductId}`, {
         headers: {
           Authorization: `Bearer ${BEARER_TOKEN}`,
         },

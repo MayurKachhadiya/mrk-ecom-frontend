@@ -51,7 +51,7 @@ const AddReview = ({ openDialog, closeDialog, handleEdit }) => {
 
     axios
       .post(
-        "http://localhost:5000/review/add",
+        "https://mrk-com-backend.onrender.com/review/add",
         {
           rating: newRatingVal,
           comment: productComment,
@@ -90,7 +90,7 @@ const AddReview = ({ openDialog, closeDialog, handleEdit }) => {
 
     axios
       .post(
-        `http://localhost:5000/review/update/${handleEdit._id}`,
+        `https://mrk-com-backend.onrender.com/review/update/${handleEdit._id}`,
         {
           rating: newRatingVal,
           comment: productComment,

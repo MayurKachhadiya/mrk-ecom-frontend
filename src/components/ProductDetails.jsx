@@ -94,7 +94,7 @@ const ProductDetails = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:5000/product/details/${pid}?page=${pageNo}&limit=10`,
+        `https://mrk-com-backend.onrender.com/product/details/${pid}?page=${pageNo}&limit=10`,
         { userId: resUserData.id },
         { headers: { Authorization: `Bearer ${UserDataToken}` } }
       );
@@ -139,7 +139,7 @@ const ProductDetails = () => {
     const BEARER_TOKEN = localStorage.getItem("user-token");
     axios
       .post(
-        "http://localhost:5000/cart/add",
+        "https://mrk-com-backend.onrender.com/cart/add",
         {
           UserId: resUserData.id,
           ProductId: pid,
@@ -175,7 +175,7 @@ const ProductDetails = () => {
   const handleDeleteConfirm = () => {
     const BEARER_TOKEN = localStorage.getItem("user-token");
     axios
-      .delete(`http://localhost:5000/review/delete/${deletedReviewId}`, {
+      .delete(`https://mrk-com-backend.onrender.com/review/delete/${deletedReviewId}`, {
         headers: {
           Authorization: `Bearer ${BEARER_TOKEN}`,
         },

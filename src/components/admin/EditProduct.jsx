@@ -45,7 +45,7 @@ const EditProduct = () => {
   const getProductDetails = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:5000/product/details/${pid}?page=1&limit=10`,
+        `https://mrk-com-backend.onrender.com/product/details/${pid}?page=1&limit=10`,
         { userId: resUserData.id },
         { headers: { Authorization: `Bearer ${UserDataToken}` } }
       );
@@ -145,7 +145,7 @@ const EditProduct = () => {
     formData.append("deletedImages", JSON.stringify(deletedImages));
 
     axios
-      .post(`http://localhost:5000/product/update/${pid}`, formData, {
+      .post(`https://mrk-com-backend.onrender.com/product/update/${pid}`, formData, {
         headers: {
           Authorization: `Bearer ${UserDataToken}`,
           "Content-Type": "multipart/form-data",

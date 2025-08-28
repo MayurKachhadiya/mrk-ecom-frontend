@@ -37,7 +37,7 @@ const AddProduct = () => {
     }
 
     axios
-      .post("http://localhost:5000/product/add", formData, {
+      .post("https://mrk-com-backend.onrender.com/product/add", formData, {
         headers: {
           Authorization: `Bearer ${BEARER_TOKEN}`,
           "Content-Type": "multipart/form-data",

@@ -32,11 +32,14 @@ const CartDetails = () => {
       resUserData = jwtDecode(UserDataToken);
     }
     axios
-      .get(`https://mrk-com-backend.onrender.com/cart/details/${resUserData.id}`, {
-        headers: {
-          Authorization: `Bearer ${UserDataToken}`,
-        },
-      })
+      .get(
+        `https://mrk-com-backend.onrender.com/cart/details/${resUserData.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${UserDataToken}`,
+          },
+        }
+      )
       .then((res) => {
         const { cart } = jwtDecode(res.data.token);
         setCarts(cart);
@@ -142,13 +145,13 @@ const CartDetails = () => {
   return (
     <>
       <NavBar />
+      <br />
       {loading ? (
         <Box sx={{ width: "100%" }}>
           <LinearProgress />
         </Box>
       ) : (
         <>
-          <NavBar />
           <Box sx={{ p: 2, backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
             <Box sx={{ backgroundColor: "#fff", p: 2, borderRadius: 2 }}>
               <Typography variant="h5" gutterBottom>

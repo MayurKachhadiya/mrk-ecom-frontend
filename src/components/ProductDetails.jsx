@@ -175,11 +175,14 @@ const ProductDetails = () => {
   const handleDeleteConfirm = () => {
     const BEARER_TOKEN = localStorage.getItem("user-token");
     axios
-      .delete(`https://mrk-com-backend.onrender.com/review/delete/${deletedReviewId}`, {
-        headers: {
-          Authorization: `Bearer ${BEARER_TOKEN}`,
-        },
-      })
+      .delete(
+        `https://mrk-com-backend.onrender.com/review/delete/${deletedReviewId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${BEARER_TOKEN}`,
+          },
+        }
+      )
       .then((res) => {
         setPage(1);
         dispatch(Snackbarhandle({ isOpen: true, message: res.data.message }));
@@ -250,6 +253,7 @@ const ProductDetails = () => {
   return (
     <>
       <NavBar />
+      <br />
       {loading ? (
         <Box sx={{ width: "100%" }}>
           <LinearProgress />
